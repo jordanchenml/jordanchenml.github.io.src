@@ -1,0 +1,10 @@
+# 檔案名稱 .gitignore
+
+# 忽略所有附檔名是 .tmp 的檔案
+*.tmp
+
+.DS_Store
+._.DS_Store
+._pelicanconf.py
+.gitignore.swp
+.vscode/

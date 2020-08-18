@@ -1,0 +1,88 @@
+	<!-- preloader
+	================================================== -->
+	<div id="preloader">
+	    <div id="loader" class="dots-fade">
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </div>
+	</div>
+
+	<div id="top" class="s-wrap site-wrapper">
+
+		<!-- site header
+		================================================== -->
+		<header class="s-header">
+		    <div class="header__top">
+		        <div class="header__logo">
+		            <a class="site-logo" href="{{ SITEURL }}">
+		                <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.svg" alt="Homepage">
+		            </a>
+		        </div>
+
+		        <div class="header__search">
+
+		            <form role="search" method="get" class="header__search-form" action="#">
+		                <label>
+		                    <span class="hide-content">Search for:</span>
+		                    <input type="search" class="header__search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+		                </label>
+		                <input type="submit" class="header__search-submit" value="Search">
+		            </form>
+
+		            <a href="#0" title="Close Search" class="header__search-close">Close</a>
+
+		        </div>  
+		        <!-- end header__search -->
+
+		        <!-- toggles -->
+		        <a href="#0" class="header__search-trigger"></a>
+		        <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+
+		    </div> <!-- end header__top -->
+
+		    <nav class="header__nav-wrap">
+		        <ul class="header__nav">
+		        	<li class="current"><a href="index.html" title="">Blogs</a></li>
+			        {% for menu_element in MENU_ELEMENTS %}
+				        {% if menu_element == 'menu_links' %}
+				        <!-- Links that are not pages -->
+				        	{% for link in MENU_LINKS %}
+				            	<li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+				        	{% endfor %}
+				        {% elif menu_element == 'tag' %}
+				        <!-- Links for Categories, create Dropdown -->
+				          	<li class="has-children">
+				          		<a href="#0" title="">Categories</a>
+				            	<ul class="sub-menu">
+				              	{% for cat, null in tag %}
+				                	<li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+				              	{% endfor %}
+				            	</ul>
+				          	</li>
+				        {% endif %}
+			        {% endfor %}
+				        <li class="has-children"><a href="#">Categories</a>
+				            <ul class="sub-menu">
+							{% for tag, articles in tags %}
+							<li><a href="{{ SITEURL }}/tag/{{ tag }}/">{{ tag }}</a></li>
+							{% endfor %}
+							</ul>
+	                <li><a href="page-about.html" title="">About</a></li>
+		        </ul> <!-- end header__nav -->
+
+		        <ul class="header__social">
+		            <li class="ss-dribbble">
+		                <a href="https://www.linkedin.com/in/jordan-chenyenting">
+		                    <span class="screen-reader-text">Linkedin</span>
+		                </a>
+		            </li>
+		            <li class="ss-email">
+		                <a href="jordanchenml@gmail.com">
+		                    <span class="screen-reader-text">Linkedin</span>
+		                </a>
+		            </li>
+		        </ul>
+
+		    </nav> <!-- end header__nav-wrap -->
+		</header> <!-- end s-header -->

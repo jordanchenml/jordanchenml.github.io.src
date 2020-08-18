@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Content - Page
+================================================== -->
+	<div class="row">
+		<div id="main" class="eight columns">
+			<section class="page">
+				<h2 class="entry-title"> {{ page.title }} </h2>
+					{{ page.content }}
+			</section> <!-- End page -->
+   		</div> <!-- End main -->
+    {% include 'include/sidebar.html' %}
+	</div> <!-- end row -->
+{% endblock %}

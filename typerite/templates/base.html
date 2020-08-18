@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+	<head>
+	    {% include 'include/google_analytics.html' %}
+
+	    <!--- basic page needs
+    	================================================== -->
+        <meta charset="utf-8">
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+	    <!-- mobile specific metas
+    	================================================== -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <!-- CSS
+    	================================================== -->
+	    {% if 'tipue_search' in PLUGINS %}
+	      <link rel="stylesheet" href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css">
+	    {% endif %}
+	    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/base.css">
+	    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/vendor.css">
+	    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css">
+
+	    {% if CUSTOM_CSS %}
+	      <link rel="stylesheet" href="{{ SITEURL }}/{{ CUSTOM_CSS }}">
+	    {% endif %}
+	    <!-- Script
+    	================================================== -->
+	    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/modernizr.js"></script>
+
+	    <!-- Favicons
+    	================================================== -->
+	    {% if FAVICON %}
+	      <link rel="shortcut icon" href="FAVICON" >
+	    {% else %}
+	    <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/apple-touch-icon.png">
+	    <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/favicon-32x32.png">
+	    <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/favicon-16x16.png">
+	    <link rel="manifest" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/site.webmanifest">
+	    {% endif %}
+
+	</head>
+
+	<body class="ss-bg-white">
+	    {% include 'include/header.html' %}
+
+	    
+	    {% block content %}{% endblock %}
+	    
+
+	    <footer class="s-footer">
+	      	{% include 'include/footer.html' %}
+
+	    </footer>
+
+	    <!-- Java Script
+    	================================================== -->
+	    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery-3.2.1.min.js"></script>
+	    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/plugins.js"></script>
+	    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js"></script>
+	    {% block extra_js %}{% endblock %}
+	    {% include 'include/disqus_comment_count.html' %}
+
+	</body>
+</html>

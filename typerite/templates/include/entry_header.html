@@ -1,0 +1,19 @@
+            {% if article.image %}
+            <div class="media-wrap entry__media">
+                <div class="entry__post-thumb">
+                    <img src="{{ SITEURL }}/images/{{article.image}}" alt="">
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="content__page-header entry__header">
+                <h1 class="display-1 entry__title">
+                    {{ article.title }}
+                </h1>
+                <ul class="entry__header-meta">
+                    <li class="date">
+                        {{ article.locale_date }}
+                    </li>
+                </ul>
+            </div>
+            <!-- end entry__header -->

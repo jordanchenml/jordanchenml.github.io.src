@@ -1,0 +1,5 @@
+XSym
+0020
+9b66dcafc43a41a973223231f836c1da
+../pelicanhtml_2.tpl
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
